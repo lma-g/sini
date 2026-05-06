@@ -590,89 +590,99 @@
       </div>
     </div>
 
+    <!-- Supabase JS Client (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-client.js"></script>
     <script src="../js/script.js"></script>
     <script>
-      // معالجة تسجيل الدخول
+      function notify(message, type) {
+        if (typeof showNotification === 'function') {
+          showNotification(message, type);
+        } else {
+          alert(message);
+        }
+      }
+
+      // ===== Login form (Supabase Auth) =====
       const loginForm = document.getElementById('loginForm');
       if (loginForm) {
-        loginForm.addEventListener('submit', function (e) {
+        loginForm.addEventListener('submit', async function (e) {
           e.preventDefault();
-          const email = document.getElementById('loginEmail').value;
+          const email = document.getElementById('loginEmail').value.trim();
           const password = document.getElementById('loginPassword').value;
 
           if (!email || !password) {
-            if (typeof showNotification === 'function') {
-              showNotification(
-                'الرجاء إدخال البريد الإلكتروني وكلمة المرور',
-                'error',
-              );
-            } else {
-              alert('الرجاء إدخال البريد الإلكتروني وكلمة المرور');
-            }
+            notify('الرجاء إدخال البريد الإلكتروني وكلمة المرور', 'error');
             return;
           }
 
-          // التحقق من صحة البريد الإلكتروني
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(email)) {
-            if (typeof showNotification === 'function') {
-              showNotification('الرجاء إدخال بريد إلكتروني صحيح', 'error');
-            } else {
-              alert('الرجاء إدخال بريد إلكتروني صحيح');
-            }
+            notify('الرجاء إدخال بريد إلكتروني صحيح', 'error');
             return;
           }
 
-          if (typeof showNotification === 'function') {
-            showNotification(
-              'تم تسجيل الدخول بنجاح! مرحباً بك في رِواق',
-              'success',
-            );
-          } else {
-            alert('تم تسجيل الدخول بنجاح! مرحباً بك في رِواق');
+          notify('جاري تسجيل الدخول...', 'info');
+          const { data, error } = await window.signIn(email, password);
+
+          if (error) {
+            notify('فشل تسجيل الدخول: ' + error.message, 'error');
+            return;
           }
 
-          // حفظ حالة تسجيل الدخول في localStorage
+          notify('تم تسجيل الدخول بنجاح! مرحباً بك في رِواق', 'success');
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('userEmail', email);
-
           setTimeout(() => {
-            window.location.href = 'index.html';
-          }, 1500);
+            window.location.href = '../index.html';
+          }, 1200);
         });
       }
 
-      // معالجة رابط نسيت كلمة المرور
+      // ===== Forgot password (Supabase reset email) =====
       const forgotLink = document.getElementById('forgotPassword');
       if (forgotLink) {
-        forgotLink.addEventListener('click', function (e) {
+        forgotLink.addEventListener('click', async function (e) {
           e.preventDefault();
-          if (typeof showNotification === 'function') {
-            showNotification(
-              'سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني',
-              'info',
-            );
+          const email = document.getElementById('loginEmail')?.value?.trim();
+          if (!email) {
+            notify('أدخل بريدك الإلكتروني أولاً ثم اضغط نسيت كلمة المرور', 'info');
+            return;
+          }
+          const { error } = await window.supabaseClient.auth.resetPasswordForEmail(email, {
+            redirectTo: window.location.origin + '/pages/login.html',
+          });
+          if (error) {
+            notify('تعذر إرسال رابط الاستعادة: ' + error.message, 'error');
           } else {
-            alert(
-              'سيتم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني',
-            );
+            notify('تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني', 'success');
           }
         });
       }
 
-      // معالجة رابط إنشاء حساب جديد
+      // ===== Register link / Sign-up flow =====
       const registerLink = document.getElementById('registerLink');
       if (registerLink) {
-        registerLink.addEventListener('click', function (e) {
+        registerLink.addEventListener('click', async function (e) {
           e.preventDefault();
-          // يمكن توجيه المستخدم إلى صفحة إنشاء حساب
-          if (typeof showNotification === 'function') {
-            showNotification('جاري تحويلك إلى صفحة إنشاء حساب جديد', 'info');
+          const email = document.getElementById('loginEmail')?.value?.trim();
+          const password = document.getElementById('loginPassword')?.value;
+          if (!email || !password) {
+            notify('أدخل بريداً إلكترونياً وكلمة مرور (6 أحرف+) لإنشاء حساب جديد', 'info');
+            return;
           }
-          setTimeout(() => {
-            // window.location.href = 'register.html';
-            alert('سيتم إضافة صفحة إنشاء حساب قريباً');
-          }, 1000);
+          if (password.length < 6) {
+            notify('كلمة المرور يجب أن تكون 6 أحرف على الأقل', 'error');
+            return;
+          }
+          notify('جاري إنشاء الحساب...', 'info');
+          const username = email.split('@')[0];
+          const { data, error } = await window.signUp(email, password, username);
+          if (error) {
+            notify('فشل إنشاء الحساب: ' + error.message, 'error');
+            return;
+          }
+          notify('تم إنشاء حسابك! تحقق من بريدك لتفعيل الحساب', 'success');
         });
       }
 
