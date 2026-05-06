@@ -1,0 +1,679 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأحجار الكريمة | تشكيلة فاخرة | رِواق</title>
+  
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- ملف التنسيق الرئيسي -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <!-- تنسيقات إضافية خاصة بهذه الصفحة فقط -->
+  <style>
+    /* Hero Section خاص بالصفحة */
+    .stones-hero {
+      background: linear-gradient(105deg, #2c211a 0%, #4a3524 100%);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .stones-hero::before {
+      content: '✦';
+      font-size: 220px;
+      opacity: 0.05;
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      font-family: serif;
+      pointer-events: none;
+      transform: rotate(-15deg);
+    }
+
+    .stones-hero::after {
+      content: '⚜️';
+      font-size: 180px;
+      opacity: 0.05;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      pointer-events: none;
+    }
+
+    .stones-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffe6c7, #f3cd9b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: inline-block;
+    }
+
+    .stones-hero p {
+      font-size: 1.25rem;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.9;
+      font-weight: 400;
+      color: #f0e2d4;
+    }
+
+    /* حاوية الأحجار الرئيسية */
+    .stones-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* تصميم بطاقات الأحجار */
+    .stone-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      background: #ffffff;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(180, 140, 100, 0.2);
+    }
+
+    .stone-section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 35px 50px -18px rgba(0, 0, 0, 0.3);
+      border-color: #dbb87c50;
+    }
+
+    /* قسم الصورة */
+    .stone-image {
+      flex: 1.1;
+      min-width: 300px;
+      background: radial-gradient(circle at 30% 20%, #faf3ea, #f2e3d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .stone-image img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.25);
+      transition: transform 0.5s ease;
+    }
+
+    .stone-image img:hover {
+      transform: scale(1.02);
+    }
+
+    /* معلومات الحجر */
+    .stone-info {
+      flex: 2;
+      padding: 2.5rem 2.5rem 2.5rem 2rem;
+    }
+
+    .stone-info h2 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #3b2a1e;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .stone-info h2 i {
+      color: #bf8f5a;
+      font-size: 2rem;
+    }
+
+    .stone-subtitle {
+      font-weight: 500;
+      color: #b47c48;
+      margin-bottom: 1.25rem;
+      border-right: 3px solid #e7c8a0;
+      padding-right: 1rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+
+    .stone-description {
+      color: #3a2c21;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .stone-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.2rem 0;
+    }
+
+    .feature-tag {
+      background: #f7efe7;
+      padding: 0.45rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #6d4c34;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    /* شبكة المنتجات داخل الأقسام */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px dashed #e9dbcf;
+    }
+
+    /* تنسيق المنتجات داخل هذه الصفحة ليتوافق مع الـ CSS العام */
+    .products-grid .product {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .products-grid .product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .products-grid .product-img-wrapper {
+      background: #faf1e6;
+      padding: 1rem;
+      border-bottom: 1px solid #eedfcb;
+    }
+
+    .products-grid .product img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .products-grid .product h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #5c3a21;
+      margin: 12px 12px 6px;
+      line-height: 1.4;
+      min-height: 48px;
+    }
+
+    .products-grid .price-info-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 6px 12px;
+    }
+
+    .products-grid .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1b6b2f;
+      background: #e9f3e6;
+      padding: 4px 12px;
+      border-radius: 40px;
+    }
+
+    .products-grid .info-btn {
+      background-color: #e7dac8;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .products-grid .add-cart {
+      background-color: #6b4f3a;
+      color: #f5f0e8;
+      border: none;
+      border-radius: 40px;
+      padding: 8px 12px;
+      margin: 8px 16px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+      transition: all 0.25s ease;
+    }
+
+    .products-grid .add-cart:hover {
+      background-color: #8b6f50;
+      transform: scale(0.98);
+    }
+
+    /* زر العودة للأعلى */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background: #876b4f;
+      width: 48px;
+      height: 48px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 99;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      background: #a57b58;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 850px) {
+      .stones-hero h1 { font-size: 2.5rem; }
+      .stones-container { padding: 1.5rem; }
+      .stone-section { flex-direction: column; }
+      .stone-info { padding: 1.8rem; }
+      .stone-info h2 { font-size: 1.8rem; }
+    }
+
+    @media (max-width: 550px) {
+      .stones-hero { padding: 3rem 1rem; }
+      .stones-hero h1 { font-size: 2rem; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== الهيدر الموحد ========== -->
+  <header class="header" id="header">
+    <div class="header-container">
+      
+      <div class="logo">
+        <img loading="lazy" src="../ass/رواق.jpeg" alt="logo">
+        <span>رِواق</span>
+      </div>
+
+      <div class="nav-wrapper">
+        <div class="main-nav">
+          <a href="../index.html">الرئيسية</a>
+          <a href="../index.html#rings">الخواتم</a>
+          <div class="dropdown">
+            <a href="stones.html">الأحجار</a>
+            <ul class="dropdown-menu">
+              <li><a href="#agate">العقيق</a></li>
+              <li><a href="#garnet">الجارنيت</a></li>
+              <li><a href="#tourmaline">التورمالين</a></li>
+              <li><a href="#ruby">الياقوت</a></li>
+            </ul>
+          </div>
+          <a href="aboutus.html">من نحن</a>
+          <a href="#contact">تواصل</a>
+        </div>
+        <div class="icon-nav">
+          <div class="search-box">
+            <input type="text" placeholder="بحث...">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <a href="#" class="cart" id="cartBtn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>سلة</span>
+          </a>
+          <a href="login.html" class="user" id="userBtn">
+            <i class="fas fa-user"></i>
+            <span>حساب</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section خاص بالصفحة -->
+  <div class="stones-hero">
+    <h1>💎 جواهر الطبيعة الخالدة</h1>
+    <p>مجموعة استثنائية من الأحجار الكريمة الطبيعية · أصالة نقية · إشراقة روحية لا تضاهى</p>
+  </div>
+
+  <div class="stones-container">
+    
+    <!-- العقيق اليماني -->
+    <section id="agate" class="stone-section">
+      <div class="stone-image">
+        <img loading="lazy" src="../ass/lo رواق.jpeg" alt="العقيق اليماني"
+             onerror="this.src='https://placehold.co/400x400/f4e6d8/7a5a42?text=عقيق'">
+      </div>
+      <div class="stone-info">
+        <h2><i class="fas fa-gem"></i> العقيق اليماني</h2>
+        <div class="stone-subtitle">درع الحماية ورمز القوة | Agate Stone</div>
+        <p class="stone-description">
+          يُعتبر العقيق اليماني أصدق صديق للروح، يتدرج بين البني الداكن والأسود المحمّر. 
+          استُخدم عبر القرون كحجر للشجاعة والتوازن.
+        </p>
+        <div class="stone-features">
+          <span class="feature-tag"><i class="fas fa-check-circle"></i> معتمد 100% طبيعي</span>
+          <span class="feature-tag"><i class="fas fa-map-marker-alt"></i> مناجم اليمن العتيقة</span>
+        </div>
+
+        <div class="products-grid">
+          <div class="product" data-name="عقيق يماني كبدي" data-price="$10 - $25 / للقيراط" 
+               data-desc="مجموعة فاخرة من العقيق اليماني الطبيعي، بجماله الأصلي الخام دون أي معالجة حرارية أو كيميائية، لتجربة اقتناء تجسد الأصالة والندرة." 
+               data-img="../ass/احجار/s1.jpg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s1.jpg" alt="عقيق يماني كبدي"
+                   onerror="this.src='https://placehold.co/200x200/2c211a/d9bc8c?text=عقيق'">
+            </div>
+            <h3>عقيق يماني كبدي</h3>
+            <div class="price-info-row">
+              <span class="price">$10 - $25 / للقيراط</span>
+              <button class="info-btn" aria-label="معلومات المنتج">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+
+          <div class="product" data-name="عقيق يماني أبيض (حليبي)" data-price="يبدأ من: $3 للقيراط" 
+               data-desc="العقيق اليماني الأبيض الطبيعي الصافي، تمتاز بنقائها العالي وملمسها الناعم الذي يعكس الفخامة الهادئة والجمال الرباني الأصيل." 
+               data-img="../ass/احجار/s2.jpeg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s2.jpeg" alt="عقيق أبيض"
+                   onerror="this.src='https://placehold.co/200x200/9b5e2e/e8d4b0?text=عقيق+أبيض'">
+            </div>
+            <h3>عقيق يماني أبيض</h3>
+            <div class="price-info-row">
+              <span class="price">يبدأ من: $3 للقيراط</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+
+          <div class="product" data-name="عقيق يماني أسود ملكي" data-price="$2 - $6 / للقيراط" 
+               data-desc="العقيق اليماني الأسود الفاخر، تتميز بصلابتها العالية ولونها القاتم الموحد الذي يمنح المجوهرات هيبة وأناقة كلاسيكية لا تنتهي." 
+               data-img="../ass/احجار/s3.jpg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s3.jpg" alt="عقيق أسود"
+                   onerror="this.src='https://placehold.co/200x200/cfb284/634b2e?text=خاتم'">
+            </div>
+            <h3>عقيق يماني أسود</h3>
+            <div class="price-info-row">
+              <span class="price">$2 - $6 / للقيراط</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+
+          <div class="product" data-name="عقيق سليماني أسود (ذو العيون)" data-price="$15 - $40 / للقيراط" 
+               data-desc="العقيق السليماني الطبيعي النادر، تتميز بنقوش 'العين' الربانية الفريدة والخطوط المتوازية التي تجمع بين فخامة الأسود وصفاء الأبيض، مما يجعل كل قطعة تحفة فنية لا تتكرر." 
+               data-img="../ass/احجار/s4.jpeg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s4.jpeg" alt="عقيق سليماني"
+                   onerror="this.src='https://placehold.co/200x200/cfb284/634b2e?text=خاتم'">
+            </div>
+            <h3>عقيق سليماني أسود</h3>
+            <div class="price-info-row">
+              <span class="price">$15 - $40 / للقيراط</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الجارنيت -->
+    <section id="garnet" class="stone-section">
+      <div class="stone-image">
+        <img loading="lazy" src="../ass/lo رواق.jpeg" alt="حجر الجارنيت"
+             onerror="this.src='https://placehold.co/400x400/a13838/eac2a0?text=جارنيت'">
+      </div>
+      <div class="stone-info">
+        <h2><i class="fas fa-fire"></i> الجارنيت · الرمان</h2>
+        <div class="stone-subtitle">نار العاطفة والطاقة المتجددة | Garnet</div>
+        <p class="stone-description">
+          الجارنيت أو "حجر النار" يتميّز بلونه الأحمر القاني، يمنح الحيوية ويشعل الحماس.
+        </p>
+        <div class="products-grid">
+          <div class="product" data-name="حجر الجارنيت الأحمر (فاستد)" data-price="$15 - $50 / للقيراط" 
+               data-desc="حجر جارنيت أحمر متوهج تم صقله باحترافية عالية (Faceted) ليعطي بريقاً يشبه انعكاسات الألماس، قطعة مثالية لهواة الأحجار الفاخرة أو لصياغة خاتم ملكي فريد." 
+               data-img="../ass/احجار/s7.jpeg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s7.jpeg" alt="جارنيت أحمر"
+                   onerror="this.src='https://placehold.co/200x200/cfb284/634b2e?text=خاتم'">
+            </div>
+            <h3>حجر الجارنيت الأحمر</h3>
+            <div class="price-info-row">
+              <span class="price">$15 - $50 / للقيراط</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+
+          <div class="product" data-name="حجر جارنيت ألماندين الطبيعي" data-price="$10 إلى $40 للقيراط" 
+               data-desc="تشكيلة فريدة تستعرض رحلة حجر الجارنيت من طبيعته الخام كبلورات هندسية مبهرة إلى أحجار مصقولة ولامعة، مثالية لهواة جمع النوادر أو كقطع أساسية لصناعة أفخم المجوهرات." 
+               data-img="../ass/احجار/s10.jfif">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s10.jfif" alt="جارنيت ألماندين"
+                   onerror="this.src='https://placehold.co/200x200/f3cd8b/744a2e?text=قلادة'">
+            </div>
+            <h3>حجر جارنيت ألماندين الطبيعي</h3>
+            <div class="price-info-row">
+              <span class="price">$10 إلى $40 للقيراط</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- التورمالين -->
+    <section id="tourmaline" class="stone-section">
+      <div class="stone-image">
+        <img loading="lazy" src="../ass/lo رواق.jpeg" alt="التورمالين"
+             onerror="this.src='https://placehold.co/400x400/b89a7a/dbc2a0?text=تورمالين'">
+      </div>
+      <div class="stone-info">
+        <h2><i class="fas fa-rainbow"></i> التورمالين</h2>
+        <div class="stone-subtitle">طيف الألوان والقدرات الكهرضغطية | Tourmaline</div>
+        <div class="products-grid">
+          <div class="product" data-name="حجر تورمالين أحمر خام (روبليت)" data-price="$15 - $40 / للقيراط" 
+               data-desc="حجر تورمالين أحمر (روبليت) طبيعي في حالته الخام، يتميز بلونه الوردي المحمر الساحر وشفافيته العالية" 
+               data-img="../ass/احجار/s12.jpg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s12.jpg" alt="تورمالين أحمر"
+                   onerror="this.src='https://placehold.co/200x200/e68fa2/fdebd0?text=تورمالين+وردي'">
+            </div>
+            <h3>حجر تورمالين أحمر خام</h3>
+            <div class="price-info-row">
+              <span class="price">$15 - $40 / للقيراط</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+
+          <div class="product" data-name="حجر تورمالين أبيض خام (أصيل)" data-price="$40 - $150 / للقطعة" 
+               data-desc="كتلة نقية من التورمالين الأبيض الطبيعي في حالته الخام، تتميز بهيكلها البلوري الفريد ولونها الثلجي الصافي" 
+               data-img="../ass/احجار/s11.jpg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s11.jpg" alt="تورمالين أبيض"
+                   onerror="this.src='https://placehold.co/200x200/2d2d2d/dac29c?text=تورمالين+أسود'">
+            </div>
+            <h3>حجر تورمالين أبيض خام</h3>
+            <div class="price-info-row">
+              <span class="price">$40 - $150 / للقطعة</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- الياقوت -->
+    <section id="ruby" class="stone-section">
+      <div class="stone-image">
+        <img loading="lazy" src="../ass/lo رواق.jpeg" alt="الياقوت"
+             onerror="this.src='https://placehold.co/400x400/be3838/eacda0?text=ياقوت'">
+      </div>
+      <div class="stone-info">
+        <h2><i class="fas fa-crown"></i> الياقوت · Ruby</h2>
+        <div class="stone-subtitle">حجر العظمة والقوة الملكية</div>
+        <div class="products-grid">
+          <div class="product" data-name="الياقوت الأحمر الملكي" data-price="$40 - $150 / للقطعة" 
+               data-desc="تألق ببريق لا يضاهى مع الياقوت الأحمر الطبيعي، ملك الأحجار الكريمة. هذه القطع المختارة بعناية تتميز بلونها الأحمر القاني الذي يرمز للحب" 
+               data-img="../ass/احجار/s14.jpg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s14.jpg" alt="ياقوت أحمر"
+                   onerror="this.src='https://placehold.co/200x200/b33030/f5dbb1?text=ياقوت'">
+            </div>
+            <h3>الياقوت الأحمر الملكي</h3>
+            <div class="price-info-row">
+              <span class="price">$40 - $150 / للقطعة</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+
+          <div class="product" data-name="الياقوت الأزرق الملكي" data-price="$40 - $150 / للقطعة" 
+               data-desc="استمتع بسحر اللون الأزرق العميق مع حجر الياقوت الأزرق الفاخر. يُعد هذا الحجر رمزاً للنبلاء والحكمة" 
+               data-img="../ass/احجار/s15.jpg">
+            <div class="product-img-wrapper">
+              <img loading="lazy" src="../ass/احجار/s15.jpg" alt="ياقوت أزرق"
+                   onerror="this.src='https://placehold.co/200x200/d3945c/7e5739?text=خاتم+ياقوت'">
+            </div>
+            <h3>الياقوت الأزرق الملكي</h3>
+            <div class="price-info-row">
+              <span class="price">$40 - $150 / للقطعة</span>
+              <button class="info-btn">ⓘ</button>
+            </div>
+            <button class="add-cart">➕ أضف إلى السلة</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- زر العودة للأعلى -->
+  <div class="scroll-top" id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>رِواق</h4>
+        <a href="../pages_footer/blog.html"><i class="fas fa-chevron-left"></i> المدونة</a>
+        <a href="../pages_footer/addr.html"><i class="fas fa-chevron-left"></i> العناوين</a>
+        <a href="../pages_footer/jobs.html"><i class="fas fa-chevron-left"></i> وظائف</a>
+      </div>
+      <div class="footer-col">
+        <h4>مساعدة</h4>
+        <a href="../pages_footer/faq.html"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a>
+        <a href="../pages_footer/ship.html"><i class="fas fa-chevron-left"></i> الشحن والتوصيل</a>
+        <a href="../pages_footer/returns.html"><i class="fas fa-chevron-left"></i> الإرجاع والاستبدال</a>
+        <a href="../pages_footer/pay.html"><i class="fas fa-chevron-left"></i> طرق الدفع</a>
+      </div>
+      <div class="footer-col">
+        <h4>سياسات</h4>
+        <a href="../pages_footer/privacy.html"><i class="fas fa-chevron-left"></i> الخصوصية</a>
+        <a href="../pages_footer/terms.html"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a>
+        <a href="../pages_footer/cookies.html"><i class="fas fa-chevron-left"></i> ملفات تعريف الارتباط</a>
+      </div>
+      <div class="footer-col">
+        <h4>تابعنا</h4>
+        <a href="https://www.instagram.com/mii7fi"><i class="fab fa-instagram"></i> إنستغرام</a>
+        <a href="https://www.facebook.com/share/1AtRwuMcKK/"><i class="fab fa-facebook"></i> فيسبوك</a>
+        <a href="https://wa.me/967772885397"><i class="fab fa-whatsapp"></i> واتساب</a>
+        <a href="https://www.snapchat.com/add/lqdry23201"><i class="fab fa-snapchat"></i> سناب شات</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 رِواق للفضة والأحجار الكريمة. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- ========== سلة التسوق الجانبية ========== -->
+  <div class="cart-overlay" id="overlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>سلة التسوق</h2>
+      <span id="closeCart">&times;</span>
+    </div>
+    <div class="cart-content">
+      <p>السلة فارغة</p>
+    </div>
+  </div>
+
+  <!-- ========== نافذة معلومات المنتج ========== -->
+  <div id="infoModal" class="modal-overlay">
+    <div class="modal-card">
+      <img loading="lazy" id="modalImg" class="modal-img" src="" alt="صورة المنتج">
+      <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <div id="modalDesc" class="modal-description"></div>
+        <div id="modalPrice" class="modal-price"></div>
+        <button class="close-modal-btn" id="closeModalBtn">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ملف الجافاسكريبت الرئيسي ========== -->
+  <script src="../js/script.js"></script>
+  
+  <!-- ========== سكربت إضافي خاص بهذه الصفحة ========== -->
+  <script>
+    // زر العودة للأعلى
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) scrollBtn.classList.add('show');
+      else scrollBtn.classList.remove('show');
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // التحقق من وجود جلسة نشطة عند تحميل الصفحة
+    window.addEventListener('load', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn === 'true') {
+        const userSpan = document.querySelector('.user span');
+        if (userSpan) {
+          userSpan.textContent = 'مرحباً!';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

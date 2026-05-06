@@ -1,0 +1,504 @@
+ <!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>رِواق | رواق للفضة والأحجار الكريمة</title>
+
+    <!-- Performance: preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="./ass/رواق.jpeg" alt="رواق للفضة والأحجار الكريمة">
+                <span>رِواق</span>
+            </div>
+
+            <!-- Navigation Wrapper -->
+            <div class="nav-wrapper">
+                <!-- Main Navigation Links -->
+                <div class="main-nav">
+                    <a href="#colle">الرئيسية</a>
+                    <a href="#rings">الخواتم</a>
+                    
+                    <!-- Dropdown Menu for Stones -->
+                    <div class="dropdown">
+                        <a href="#">الأحجار</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/stones.html#agate">العقيق</a></li>
+                            <li><a href="pages/stones.html#garnet">الجارنيت</a></li>
+                            <li><a href="pages/stones.html#tourmaline">التورمالين</a></li>
+                            <li><a href="pages/stones.html#ruby">الياقوت</a></li>
+                        </ul>
+                    </div>
+                    
+                    <a href="pages/aboutus.html">من نحن</a>
+                    <a href="#contact">تواصل</a>
+                </div>
+
+                <!-- Icons & Search -->
+                <div class="icon-nav">
+                    <div class="search-box">
+                        <input type="text" placeholder="بحث...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <a href="#" class="cart" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>سلة</span>
+                    </a>
+                    <a href="pages/login.html" class="user" id="userBtn">
+                        <i class="fas fa-user"></i>
+                        <span>حساب</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="colle">
+        <div class="hero-background">
+            <img src="ass/mf.jpeg" alt="مجوهرات رِواق الفضية" class="hero-image" fetchpriority="high">
+        </div>
+        <div class="hero-content">
+            <h1>رِواق للفضة والأحجار الكريمة</h1>
+            <p>تشكيلة مختارة من خواتم الفضة والأحجار الكريمة بصياغة دقيقة وجودة موثوقة.</p>
+            <a href="#" class="btn-primary" id="openMenu">تصفح المجموعة</a>
+
+            <!-- Category Modal -->
+            <div class="modal" id="categoryModal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>اختر المجموعة</h2>
+
+                    <!-- Women's Collection -->
+                    <div class="dropdown women">
+                        <a href="#" class="main-link">المجموعة النسائية</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/wo-rings.html">خواتم</a></li>
+                            <li><a href="pages/wo-necklaces.html">قلائد</a></li>
+                            <li><a href="pages/wo-bracelets.html">أساور</a></li>
+                            <li><a href="pages/wo-earrings.html">أقراط</a></li>
+                            <li><a href="pages/wo-sets.html">أطقم</a></li>
+                            <li><a href="pages/stones.html">أحجار خام</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Men's Collection -->
+                    <div class="dropdown men">
+                        <a href="#" class="main-link">المجموعة الرجالية</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/me-rings.html">خواتم</a></li>
+                            <li><a href="pages/men-beads.html">مسابح</a></li>
+                            <li><a href="pages/stones.html">أحجار خام</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUCTS SECTION ==================== -->
+    <div class="additional-content">
+        <div class="shop-header">
+            <h1>منتجات حصرية</h1>
+            <p>تشكيلة فاخرة من العقيق، الفيروز، والكريستال | اضغط على <span class="info-badge">ⓘ</span> لقراءة الوصف التفصيلي</p>
+        </div>
+
+        <div class="products-container" id="rings">
+            <!-- Product 1 -->
+            <div class="product" data-name="عقيق يماني أسود" data-price="25" data-desc="حجر عقيق يماني أصلي بلمعة صقيلة فائقة الجودة، شكل بيضاوي أنيق يناسب الخواتم الرجالية والنسائية." data-img="ass/منتجات/m1 (1).jpeg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/m1%20(1).jpeg" alt="عقيق يماني">
+                </div>
+                <h3>عقيق يماني أسود - بيضاوي بلمعة صقيلة</h3>
+                <div class="price-info-row">
+                    <span class="price">25$</span>
+                    <button class="info-btn" aria-label="معلومات المنتج">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product" data-name="فيروز سماوي" data-price="35" data-desc="حجر فيروز سماوي بوجود عروق طبيعية بنية تمنحه طابعاً أصيلاً تراثياً." data-img="ass/منتجات/P4.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P4.jpg" alt="فيروز سماوي">
+                </div>
+                <h3>فيروز سماوي - عروق بنية بطابع أصيل</h3>
+                <div class="price-info-row">
+                    <span class="price">35$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="خاتم  ملكي" data-price="45" data-desc="خاتم راقٍ يتميز بفص بيضاوي من الحجر الأسود الجذاب مع إطار وهيكل ناعم مطلي بالذهب، يجمع بين البساطة والفخامة ليناسب مختلف" data-img="ass/خواتم نسائي/wr8.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/خواتم نسائي/wr8.jpg" alt="سوار عقيق">
+                </div>
+                <h3>خاتم "أونيكس" ملكي</h3>
+                <div class="price-info-row">
+                    <span class="price"> 45$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="خاتم توباز فيروزي ملكي (فضة عيار 925)" data-price="45" data-desc="خاتم ساحر يتميز بحجر فيروزي بيضاوي كبير ذو ملمس ناعم، محاط بإطار فضي مزخرف بنقوش ملكية دقيقة لإطلالة تراثية وأنيقة." data-img="ass/خواتم نسائي/wr11.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/خواتم نسائي/wr11.jpg" alt="سوار عقيق">
+                </div>
+                <h3>خاتم "توباز" فيروزي ملكي</h3>
+                <div class="price-info-row">
+                    <span class="price">45$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product" data-name="عقيق يماني كبير" data-price="27" data-desc="حجر عقيق يماني كبير بظلال بنية ورمادية متداخلة بشكل طبيعي، ملمس ناعم ولمعة جذابة." data-img="ass/منتجات/P6.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P6.jpg" alt="عقيق يماني">
+                </div>
+                <h3>عقيق يماني كبير - ظلال بنية ورمادية</h3>
+                <div class="price-info-row">
+                    <span class="price">27$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product" data-name="فص أسود دائري" data-price="29" data-desc="فص أسود دائري مسطح مدمج داخل إطار الخاتم بشكل مميز، حجر كريم ناعم ذو ملمس حريري." data-img="ass/منتجات/P8.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P8.jpg" alt="فص أسود">
+                </div>
+                <h3>فص أسود دائري مسطح - ملمس حريري</h3>
+                <div class="price-info-row">
+                    <span class="price">29$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="خاتم غصن الزيتون المرصع بالزركون" data-price="20" data-desc="خاتم بتصميم مفتوح يجسد رقة الطبيعة بشكل غصنين ملتفين، مزين بفصوص الزركون اللامعة التي تضفي لمسة من النعومة والأناقة العصرية." data-img="ass/خواتم نسائي/wr12.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/خواتم نسائي/wr12.jpg" alt="سوار عقيق">
+                </div>
+                <h3>خاتم المرصع بالزركون</h3>
+                <div class="price-info-row">
+                    <span class="price">20$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="ياقوت الروز" data-price="30" data-desc="يتميز هذا الخاتم بحجر بيضاوي بلون التوت الجذاب وقطع كابوشون مصقول، يحتضنه إطار ذهبي بتصميم البتلات الناعم الذي يضفي لمسة أنثوية كلاسيكية." data-img="ass/خواتم نسائي/wr13.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/خواتم نسائي/wr13.jpg" alt="سوار عقيق">
+                </div>
+                <h3>ياقوت الروز</h3>
+                <div class="price-info-row">
+                    <span class="price">35$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product" data-name="خاتم الوردة" data-price="31" data-desc="خاتم بتصميم 'الوردة' يضم فصوصاً من حجر الفيروز موزعة بشكل دائري على قاعدة من الفضة المنقوشة بعناية." data-img="ass/منتجات/P28.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P28.jpg" alt="خاتم الوردة">
+                </div>
+                <h3>خاتم الوردة - فصوص فيروز بتصميم دائري</h3>
+                <div class="price-info-row">
+                    <span class="price">31$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product" data-name="أونيكس بنقوش عربية" data-price="26" data-desc="خاتم بحجر أونيكس أسود بيضاوي كبير، يبرز بجمال النقوش العربية (الأرابيسك) الملتوية على كامل الهيكل." data-img="ass/منتجات/P9.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P9.jpg" alt="أونيكس بنقوش عربية">
+                </div>
+                <h3>أونيكس أسود - نقوش أرابيسك عربية</h3>
+                <div class="price-info-row">
+                    <span class="price">26$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="خاتم أكوامارين ملكي بنقوش يدوية" data-price="55" data-desc="خاتم استثنائي مرصع بحجر سماوي بقطع الروزمات المتعدد الأوجه، يمتاز بهيكل فضي غني بنقوش نباتية بارزة تمنحه فخامة القطع الأثرية النادرة." data-img="ass/خواتم نسائي/wr14.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/خواتم نسائي/wr14.jpg" alt="سوار عقيق">
+                </div>
+                <h3>خاتم ملكي بنقوش يدوية</h3>
+                <div class="price-info-row">
+                    <span class="price">55$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="خاتم زهرة الكرز الأبيض" data-price="30" data-desc="خاتم رقيق يتميز بتصميم زهرة متفتحة ببتلات بيضاء ناعمة وتفاصيل دقيقة في المركز، يعكس روح الأنوثة والبساطة في قطعة واحدة." data-img="ass/خواتم نسائي/wr17.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/خواتم نسائي/wr17.jpg" alt="سوار عقيق">
+                </div>
+                <h3>خاتم زهرة الكرز الأبيض</h3>
+                <div class="price-info-row">
+                    <span class="price">30$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product" data-name="عقيق أحمر ناعم" data-price="23" data-desc="خاتم ناعم بحجر عقيق أحمر صغير، يتميز بتصميم فضي انسيابي وزخارف نباتية رقيقة." data-img="ass/منتجات/P25.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P25.jpg" alt="عقيق أحمر">
+                </div>
+                <h3>عقيق أحمر ناعم - زخارف نباتية رقيقة</h3>
+                <div class="price-info-row">
+                    <span class="price">23$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product" data-name="خاتم أثري أخضر" data-price="38" data-desc="خاتم أثري بحجر أخضر منقوش، يتميز بهيكل فضي داكن وتصميم عثماني عتيق." data-img="ass/منتجات/P24.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P24.jpg" alt="خاتم أثري">
+                </div>
+                <h3>خاتم أثري أخضر - تصميم عثماني عتيق</h3>
+                <div class="price-info-row">
+                    <span class="price">38$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product" data-name="قلادة فضية عيار 925 بتصميم بتلات الزركون" data-price="35" data-desc="قلادة فاخرة مصاغة من الفضة النقية، تتميز بتصميم هندسي مبتكر يجمع بين أربعة قلوب مرصعة بالألماس الصناعي (الزركون) لتشكل زهرة متكاملة تمنحك إطلالة ملكية ساحرة." data-img="ass/منتجات/p32.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/قلائد/ne9.jpg" alt="قلادة">
+                </div>
+                <h3>قلادة فضية بتصميم بتلات الزركون</h3>
+                <div class="price-info-row">
+                    <span class="price">35$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product" data-name="قلادة فضية عيار 925 بتصميم اللانهاية" data-price="30" data-desc="قلادة كلاسيكية راقية مصاغة من الفضة الخالصة، تتميز برمز اللانهاية المرصع بفصوص الزركون اللامعة، لتعبر عن الجمال الأبدي والأناقة التي لا تخبو بمرور الزمن." data-img="ass/منتجات/p32.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/قلائد/ne10.jpg" alt="قلادة">
+                </div>
+                <h3>قلادة فضية بتصميم "اللانهاية" (Infinity)</h3>
+                <div class="price-info-row">
+                    <span class="price">30$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product" data-name="خاتم ياقوت أزرق" data-price="33" data-desc="خاتم مرصع بمجموعة من الفصوص الزرقاء اللامعة بتصميم دائري وهيكل فضي مزخرف." data-img="ass/منتجات/P27.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P27.jpg" alt="ياقوت أزرق">
+                </div>
+                <h3>خاتم ياقوت أزرق - تصميم دائري فضي مزخرف</h3>
+                <div class="price-info-row">
+                    <span class="price">33$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product" data-name="خاتم فضة ملكي" data-price="45" data-desc="خاتم فضة ملكي بسطح دائري عريض، منقوش بالكامل بزخارف إسلامية يدوية دقيقة." data-img="ass/منتجات/P23.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P23.jpg" alt="خاتم فضة ملكي">
+                </div>
+                <h3>خاتم فضة ملكي - زخارف إسلامية يدوية</h3>
+                <div class="price-info-row">
+                    <span class="price">45$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="سوار فضي ملكي عيار 925 مرصع باليشم والعقيق" data-price="80" data-desc="سوار فخم يجسد الفن التراثي العريق، مصاغ من الفضة المنقوشة يدوياً ومزين بأحجار اليشم الأبيض النقي وفصوص العقيق الأحمر، ليمنح معصمك إطلالة ملكية تعبق بالأصالة." data-img="ass/منتجات/p32.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/اساور/bra5.jpg" alt="سوار">
+                </div>
+                <h3>سوار فضي ملكي مرصع باليشم والعقيق</h3>
+                <div class="price-info-row">
+                    <span class="price">80$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="أقراط فضية بتصميم أجنحة الملاك المتدلية" data-price="30" data-desc="أقراط فضية أنيقة مستوحاة من أجنحة الملاك، مرصعة بفصوص الزركون البراقة، تتميز بسلسلة طويلة متدلية تمنحك إطلالة عصرية ومفعمة بالأنوثة." data-img="ass/منتجات/p32.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/اقراط/ea9.jpg" alt="أقراط">
+                </div>
+                <h3>أقراط فضية بتصميم "أجنحة الملاك" المتدلية</h3>
+                <div class="price-info-row">
+                    <span class="price">30$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <!-- Product 13 -->
+            <div class="product" data-name="خاتم عصري أسود" data-price="29" data-desc="خاتم عصري ضخم بحجر أسود مستطيل، يتميز بتصميم هندسي جريء مرصع بالفصوص." data-img="ass/منتجات/P20.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/P20.jpg" alt="خاتم أسود">
+                </div>
+                <h3>خاتم عصري أسود - تصميم هندسي جريء</h3>
+                <div class="price-info-row">
+                    <span class="price">29$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="عقيق كبدي طلاسم" data-price="30" data-desc="عقيق كبدي دائري منقوش بطلاسم تراثية وهيكل فضي بنقوش نباتية." data-img="ass/منتجات/p32.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/منتجات/p32.jpg" alt="عقيق كبدي طلاسم">
+                </div>
+                <h3>عقيق كبدي طلاسم - نقوش نباتية تراثية</h3>
+                <div class="price-info-row">
+                    <span class="price">30$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="أقراط فضية متدلية بتصميم نجمة الشمال" data-price="30" data-desc="أقراط راقية من الفضة الخالصة عيار 925، تتميز بتصميم طولي عصري ينتهي بنجمة مرصعة بفصوص الزركون عالية النقاء." data-img="ass/منتجات/p32.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/اقراط/ea10.jpg" alt="أقراط">
+                </div>
+                <h3>أقراط فضية متدلية بتصميم نجمة الشمال</h3>
+                <div class="price-info-row">
+                    <span class="price">30$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+            <div class="product" data-name="سوار فضي عيار 925 مرصع بحجر السترين الأصفر" data-price="45" data-desc="سوار فاخر من الفضة الإسترلينية يتميز بتصميم هندسي مفرغ بنقوش كلاسيكية، تتوسطه أحجار السترين الدافئة بقطع بيضاوي مصقول." data-img="ass/اساور/bra10.jpg">
+                <div class="product-img-wrapper">
+                    <img loading="lazy" src="ass/اساور/bra10.jpg" alt="سوار عقيق">
+                </div>
+                <h3>سوار فضي مرصع بحجر السترين الأصفر</h3>
+                <div class="price-info-row">
+                    <span class="price">45$</span>
+                    <button class="info-btn">ⓘ</button>
+                </div>
+                <button class="add-cart">➕ أضف إلى السلة</button>
+            </div>
+
+
+            
+        </div>
+    </div>
+
+    <!-- ==================== MODALS ==================== -->
+    <!-- Product Info Modal -->
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-card">
+            <img loading="lazy" id="modalImg" class="modal-img" src="" alt="صورة المنتج">
+            <div class="modal-content">
+                <h3 id="modalTitle"></h3>
+                <div id="modalDesc" class="modal-description"></div>
+                <div id="modalPrice" class="modal-price"></div>
+                <button class="close-modal-btn" id="closeModalBtn">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CART SIDEBAR ==================== -->
+    <div class="cart-overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>سلة التسوق</h2>
+            <span id="closeCart">&times;</span>
+        </div>
+        <div class="cart-content">
+            <p>السلة فارغة</p>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>رِواق</h4>
+                <a href="pages_footer/blog.html"><i class="fas fa-chevron-left"></i> المدونة</a>
+                <a href="pages_footer/addr.html"><i class="fas fa-chevron-left"></i> العناوين</a>
+                <a href="pages_footer/jobs.html"><i class="fas fa-chevron-left"></i> وظائف</a>
+            </div>
+            <div class="footer-col">
+                <h4>مساعدة</h4>
+                <a href="pages_footer/faq.html"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a>
+                <a href="pages_footer/ship.html"><i class="fas fa-chevron-left"></i> الشحن والتوصيل</a>
+                <a href="pages_footer/returns.html"><i class="fas fa-chevron-left"></i> الإرجاع والاستبدال</a>
+                <a href="pages_footer/pay.html"><i class="fas fa-chevron-left"></i> طرق الدفع</a>
+            </div>
+            <div class="footer-col">
+                <h4>سياسات</h4>
+                <a href="pages_footer/privacy.html"><i class="fas fa-chevron-left"></i> الخصوصية</a>
+                <a href="pages_footer/terms.html"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a>
+                <a href="pages_footer/cookies.html"><i class="fas fa-chevron-left"></i> ملفات تعريف الارتباط</a>
+            </div>
+            <div class="footer-col">
+                <h4>تابعنا</h4>
+                <a href="https://www.instagram.com/mii7fi"><i class="fab fa-instagram"></i> إنستغرام</a>
+                <a href="https://www.facebook.com/share/1AtRwuMcKK/"><i class="fab fa-facebook"></i> فيسبوك</a>
+                <a href="https://wa.me/967772885397"><i class="fab fa-whatsapp"></i> واتساب</a>
+                <a href="https://www.snapchat.com/add/lqdry23201"><i class="fab fa-snapchat"></i> سناب شات</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 رِواق للفضة والأحجار الكريمة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="js/script.js"></script>
+    <script>
+        // Check login status on page load
+        window.addEventListener('load', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                const userSpan = document.querySelector('.user span');
+                if (userSpan) {
+                    userSpan.textContent = 'مرحباً!';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

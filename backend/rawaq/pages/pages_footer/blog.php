@@ -1,0 +1,636 @@
+<?php
+$root = dirname(dirname(__DIR__));
+require_once $root . '/includes/db_connect.php';
+$page_title = "المدونة | رِواق للفضة والأحجار الكريمة";
+include $root . '/includes/header.php';
+?>
+
+<style>
+/* ============================================
+         رِواق للفضة والأحجار الكريمة
+         التنسيقات الرئيسية
+         ============================================ */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #faf3e8;
+        color: #3e2e23;
+        line-height: 1.6;
+        
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+ 
+      /* ========== HEADER STYLES ========== */
+      .header {
+        background-color: #6b4f3a;
+        color: #faf3e8;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition:
+          background-color 0.3s ease,
+          padding 0.3s ease;
+      }
+
+      .header.scrolled {
+        background-color: #4f3a2b;
+        padding: 0.5rem 2rem;
+      }
+
+      .header-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 1px solid #c9b6a5;
+        padding-top: 0.5rem;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 1.2rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        order: 1;
+        flex-wrap: wrap;
+      }
+
+      .main-nav a {
+        color: #faf3e8;
+        text-decoration: none;
+        transition:
+          color 0.3s,
+          border-bottom 0.3s;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 4px;
+      }
+
+      .main-nav a:hover {
+        color: #f0dbc8;
+        border-bottom-color: #f0dbc8;
+      }
+
+      .icon-nav {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 1.2rem;
+        order: 2;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .icon-nav a {
+        color: #faf3e8;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: transform 0.2s;
+      }
+
+      .icon-nav a:hover {
+        transform: translateY(-2px);
+        color: #ffecd6;
+      }
+
+      .icon-nav span {
+        font-size: 0.9rem;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background-color: #f5e6d8;
+        border-radius: 20px;
+        padding: 0.1rem 0.8rem;
+      }
+
+      .search-box input {
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 90px;
+        padding: 0.3rem 0;
+        font-size: 0.9rem;
+        color: #3e2e23;
+        
+      }
+
+      .search-box input::placeholder {
+        color: #6b4f3a;
+        font-size: 0.8rem;
+      }
+
+      .search-box button {
+        background: none;
+        border: none;
+        color: #6b4f3a;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      /* ========== DROPDOWN MENU ========== */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #532b07;
+        list-style: none;
+        padding: 0.5rem 0;
+        margin: 0;
+        display: none;
+        min-width: 150px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #f5f5dc;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: background 0.2s;
+      }
+
+      .dropdown-menu li a:hover {
+        background: #a0522d;
+      }
+
+      /* ========== PAGE HEADER ========== */
+      .page-header {
+        background: linear-gradient(135deg, #6b4f3a, #4f3a2b);
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      /* ========== BLOG STYLES ========== */
+      .blog-container {
+        max-width: 1200px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+        flex: 1;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      .blog-img {
+        height: 200px;
+        background: #f5ede2;
+        overflow: hidden;
+      }
+
+      .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .blog-card:hover .blog-img img {
+        transform: scale(1.05);
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-date {
+        color: #b48c63;
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .blog-content h3 {
+        color: #4a2c1a;
+        margin-bottom: 0.8rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+
+      .blog-content p {
+        color: #6b5a4a;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .read-more {
+        color: #b48c63;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: gap 0.3s ease;
+      }
+
+      .read-more:hover {
+        color: #6b4f3a;
+        gap: 10px;
+      }
+
+      /* ========== FOOTER STYLES ========== */
+      .footer {
+        background-color: #3e2e23;
+        color: #ecd9c5;
+        padding: 2.5rem 2rem 1rem;
+        direction: rtl;
+        margin-top: auto;
+      }
+
+      .footer-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-col h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #b3967a;
+        display: inline-block;
+        padding-bottom: 5px;
+        color: #f5e2d3;
+      }
+
+      .footer-col a {
+        color: #e0cebc;
+        text-decoration: none;
+        margin-bottom: 0.7rem;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer-col a:hover {
+        color: #fff5e6;
+        transform: translateX(-5px);
+      }
+
+      .footer-col i {
+        width: 20px;
+        color: #c5ab94;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2.5rem;
+        font-size: 0.95rem;
+        color: #bba28c;
+        border-top: 1px solid #5f4e3d;
+        margin-top: 2rem;
+      }
+
+      /* ========== CART SIDEBAR ========== */
+      .cart-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        z-index: 998;
+      }
+
+      .cart-overlay.active {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .cart-sidebar {
+        position: fixed;
+        top: 0;
+        left: -350px;
+        width: 350px;
+        height: 100%;
+        background: #fff;
+        transition: 0.3s ease;
+        z-index: 999;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cart-sidebar.active {
+        left: 0;
+      }
+
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        background: #5a3e2b;
+        color: #fff;
+        align-items: center;
+      }
+
+      .cart-header h2 {
+        font-size: 1.3rem;
+      }
+
+      #closeCart {
+        cursor: pointer;
+        font-size: 22px;
+        transition: transform 0.2s;
+      }
+
+      #closeCart:hover {
+        transform: scale(1.1);
+      }
+
+      .cart-content {
+        padding: 15px;
+        flex: 1;
+        overflow-y: auto;
+      }
+
+      /* ========== RESPONSIVE ========== */
+      @media (max-width: 768px) {
+        .header {
+          padding: 0.8rem 1rem;
+        }
+
+        .header-container {
+          flex-direction: column;
+        }
+
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 0.5rem;
+          width: 100%;
+        }
+
+        .main-nav {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.8rem;
+        }
+
+        .icon-nav {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .logo span {
+          font-size: 1.5rem;
+        }
+
+        .page-header h1 {
+          font-size: 1.8rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-container {
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .footer-col h4 {
+          display: block;
+          text-align: center;
+        }
+
+        .footer-col a {
+          justify-content: center;
+        }
+
+        .cart-sidebar {
+          width: 280px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-nav a {
+          font-size: 0.85rem;
+        }
+
+        .icon-nav a span {
+          display: none;
+        }
+
+        .search-box input {
+          width: 80px;
+        }
+
+        .page-header {
+          padding: 2rem 1rem;
+        }
+
+        .page-header h1 {
+          font-size: 1.5rem;
+        }
+
+        .blog-container {
+          padding: 0 1rem;
+          margin: 2rem auto;
+        }
+
+        .blog-content h3 {
+          font-size: 1.1rem;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+</style>
+
+<main style="background: #fdfbf9; min-height: 80vh;">
+<div class="page-header">
+      <h1>📝 مدونة رِواق</h1>
+      <p>اكتشفي عالم الأحجار الكريمة والمجوهرات الفاخرة</p>
+    </div>
+
+    <!-- ========== المحتوى الرئيسي للمدونة ========== -->
+    <div class="blog-container">
+      <div class="blog-grid">
+        <!-- المقال 1: العقيق اليماني -->
+        <div class="blog-card" onclick="location.href='#'">
+          <div class="blog-img">
+            <img
+              src="../../assets/ass/blog1.jpeg"
+              alt="العقيق اليماني"
+              onerror="this.src='https://placehold.co/600x400/f5ede2/8b6f50?text=العقيق+اليماني&font=arabic'"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date"
+              ><i class="far fa-calendar-alt"></i> 15 مارس 2025</span
+            >
+            <h3>العقيق اليماني: تاريخه وأنواعه وفوائده</h3>
+            <p>
+              العقيق اليماني من أقدم الأحجار الكريمة المستخدمة في العالم العربي،
+              تعرف على أنواعه المختلفة وفوائده الروحية...
+            </p>
+            <a href="#" class="read-more"
+              >اقرأ المزيد <i class="fas fa-arrow-left"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- المقال 2: اختيار الخاتم -->
+        <div class="blog-card" onclick="location.href='#'">
+          <div class="blog-img">
+            <img
+              src="../../assets/ass/blog2.jpeg"
+              alt="كيف تختار خاتمك"
+              onerror="this.src='https://placehold.co/600x400/f5ede2/8b6f50?text=اختيار+الخاتم+المناسب&font=arabic'"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date"
+              ><i class="far fa-calendar-alt"></i> 5 مارس 2025</span
+            >
+            <h3>كيف تختار الخاتم المناسب لشخصيتك؟</h3>
+            <p>
+              الخواتم ليست مجرد زينة، بل تعكس شخصية من يرتديها. نصائح لاختيار
+              الخاتم المثالي حسب لون البشرة والشخصية...
+            </p>
+            <a href="#" class="read-more"
+              >اقرأ المزيد <i class="fas fa-arrow-left"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- المقال 3: العناية بالفضة -->
+        <div class="blog-card" onclick="location.href='#'">
+          <div class="blog-img">
+            <img
+              src="../../assets/ass/blog3.jpeg"
+              alt="العناية بالفضة"
+              onerror="this.src='https://placehold.co/600x400/f5ede2/8b6f50?text=العناية+بالفضة&font=arabic'"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date"
+              ><i class="far fa-calendar-alt"></i> 20 فبراير 2025</span
+            >
+            <h3>كيف تحافظين على لمعان الفضة؟</h3>
+            <p>
+              الفضة النقية تحتاج إلى عناية خاصة للحفاظ على بريقها. تعرفي على
+              طرق التنظيف والتخزين الصحيحة للمجوهرات الفضية...
+            </p>
+            <a href="#" class="read-more"
+              >اقرأ المزيد <i class="fas fa-arrow-left"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- المقال 4: دليل الأحجار الكريمة -->
+        <div class="blog-card" onclick="location.href='#'">
+          <div class="blog-img">
+            <img
+              src="../../assets/ass/blod4.jpeg"
+              alt="الأحجار الكريمة"
+              onerror="this.src='https://placehold.co/600x400/f5ede2/8b6f50?text=دليل+الأحجار+الكريمة&font=arabic'"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date"
+              ><i class="far fa-calendar-alt"></i> 10 فبراير 2025</span
+            >
+            <h3>أسرار الأحجار الكريمة: دليلك الشامل</h3>
+            <p>
+              تعرف على أنواع الأحجار الكريمة ودرجاتها وأسعارها، وكيفية التمييز
+              بين الحجر الأصلي والتقليد...
+            </p>
+            <a href="#" class="read-more"
+              >اقرأ المزيد <i class="fas fa-arrow-left"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    
+    
+</main>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/rawaq/includes/footer.php'; ?>

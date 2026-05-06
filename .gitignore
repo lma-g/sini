@@ -1,0 +1,48 @@
+# ===== Sensitive Files (NEVER commit these) =====
+# PHP fix/refactor scripts (security risk)
+**/fix_*.php
+**/refactor_*.php
+
+# Database files
+*.sql
+*.sqlite
+*.db
+
+# Environment & config
+.env
+.env.local
+.env.*.local
+config.local.php
+**/database/*.sql
+
+# ===== Build & Dependencies =====
+node_modules/
+vendor/
+dist/
+build/
+
+# ===== Deployment =====
+.netlify/
+.vercel/
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Editor files =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== Logs =====
+*.log
+npm-debug.log*
+error_log
+
+# ===== Temporary files =====
+*.tmp
+*.temp
+*.bak

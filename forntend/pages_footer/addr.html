@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اسم الصفحة | رِواق للفضة والأحجار الكريمة</title>
+    <!-- الخطوط -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- ملف التنسيق الرئيسي -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- تنسيقات إضافية للصفحة (اختياري) -->
+    <style>
+      /* أضف تنسيقاتك الخاصة هنا */
+    </style>
+    <style>
+      /* ============================================
+   رِواق للفضة والأحجار الكريمة
+   الملف الرئيسي للتنسيقات
+   ============================================ */
+
+      /* ========== RESET & BASE ========== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #faf3e8;
+        color: #3e2e23;
+        line-height: 1.6;
+        font-family: "Playpen Sans Arabic", "Cairo", "Segoe UI", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ========== HEADER STYLES ========== */
+      .header {
+        background-color: #6b4f3a;
+        color: #faf3e8;
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition:
+          background-color 0.3s ease,
+          padding 0.3s ease;
+      }
+
+      .header.scrolled {
+        background-color: #4f3a2b;
+        padding: 0.5rem 2rem;
+      }
+
+      .header-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .nav-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 1px solid #c9b6a5;
+        padding-top: 0.5rem;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 1.2rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        order: 1;
+        flex-wrap: wrap;
+      }
+
+      .main-nav a {
+        color: #faf3e8;
+        text-decoration: none;
+        transition:
+          color 0.3s,
+          border-bottom 0.3s;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 4px;
+      }
+
+      .main-nav a:hover {
+        color: #f0dbc8;
+        border-bottom-color: #f0dbc8;
+      }
+
+      .icon-nav {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 1.2rem;
+        order: 2;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .icon-nav a {
+        color: #faf3e8;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: transform 0.2s;
+      }
+
+      .icon-nav a:hover {
+        transform: translateY(-2px);
+        color: #ffecd6;
+      }
+
+      .icon-nav span {
+        font-size: 0.9rem;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        background-color: #f5e6d8;
+        border-radius: 20px;
+        padding: 0.1rem 0.8rem;
+      }
+
+      .search-box input {
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 90px;
+        padding: 0.3rem 0;
+        font-size: 0.9rem;
+        color: #3e2e23;
+        font-family: inherit;
+      }
+
+      .search-box input::placeholder {
+        color: #6b4f3a;
+        font-size: 0.8rem;
+      }
+
+      .search-box button {
+        background: none;
+        border: none;
+        color: #6b4f3a;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      /* ========== DROPDOWN MENU ========== */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #532b07;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        min-width: 150px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+      }
+
+      .dropdown-menu li a {
+        display: block;
+        padding: 10px;
+        color: #f5f5dc;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: background 0.2s;
+      }
+
+      .dropdown-menu li a:hover {
+        background: #a0522d;
+      }
+
+      /* ========== FOOTER STYLES ========== */
+      .footer {
+        background-color: #3e2e23;
+        color: #ecd9c5;
+        padding: 2.5rem 2rem 1rem;
+        direction: rtl;
+        margin-top: auto;
+      }
+
+      .footer-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .footer-col {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-col h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #b3967a;
+        display: inline-block;
+        padding-bottom: 5px;
+        color: #f5e2d3;
+      }
+
+      .footer-col a {
+        color: #e0cebc;
+        text-decoration: none;
+        margin-bottom: 0.7rem;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer-col a:hover {
+        color: #fff5e6;
+        transform: translateX(-5px);
+      }
+
+      .footer-col i {
+        width: 20px;
+        color: #c5ab94;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2.5rem;
+        font-size: 0.95rem;
+        color: #bba28c;
+        border-top: 1px solid #5f4e3d;
+        margin-top: 2rem;
+      }
+
+      /* ========== CART SIDEBAR ========== */
+      .cart-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 998;
+      }
+
+      .cart-overlay.active {
+        display: block;
+      }
+
+      .cart-sidebar {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 350px;
+        height: 100%;
+        background: #fff;
+        transition: 0.3s ease;
+        z-index: 999;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cart-sidebar.active {
+        right: 0;
+      }
+
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        background: #5a3e2b;
+        color: #fff;
+        align-items: center;
+      }
+
+      .cart-header h2 {
+        font-size: 1.3rem;
+      }
+
+      #closeCart {
+        cursor: pointer;
+        font-size: 22px;
+        transition: transform 0.2s;
+      }
+
+      #closeCart:hover {
+        transform: scale(1.1);
+      }
+
+      .cart-content {
+        padding: 15px;
+        flex: 1;
+        overflow-y: auto;
+      }
+
+      /* ========== NOTIFICATION ========== */
+      .notification {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100px);
+        background: white;
+        color: #6b4f3a;
+        padding: 15px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        z-index: 10000;
+        transition: transform 0.3s ease;
+        border-right: 4px solid #6b4f3a;
+        direction: rtl;
+        font-family: inherit;
+      }
+
+      .notification.show {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .notification.success {
+        border-right-color: #28a745;
+      }
+
+      .notification.error {
+        border-right-color: #dc3545;
+      }
+
+      .notification.info {
+        border-right-color: #17a2b8;
+      }
+
+      .notification i {
+        font-size: 1.3rem;
+      }
+
+      .notification.success i {
+        color: #28a745;
+      }
+
+      .notification.error i {
+        color: #dc3545;
+      }
+
+      .notification.info i {
+        color: #17a2b8;
+      }
+
+      /* ========== BUTTONS ========== */
+      .btn-primary {
+        background-color: #8b6f50;
+        color: white;
+        border: none;
+        padding: 1rem 3rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        text-decoration: none;
+        display: inline-block;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-primary:hover {
+        background-color: #6b4f3a;
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ========== RESPONSIVE DESIGN ========== */
+      @media (max-width: 768px) {
+        .header {
+          padding: 0.8rem 1rem;
+        }
+
+        .nav-wrapper {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .main-nav {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.8rem;
+        }
+
+        .icon-nav {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .logo {
+          font-size: 2rem;
+        }
+
+        .footer-container {
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .footer-col h4 {
+          display: block;
+          text-align: center;
+        }
+
+        .footer-col a {
+          justify-content: center;
+        }
+
+        .cart-sidebar {
+          width: 280px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-nav a {
+          font-size: 0.9rem;
+        }
+
+        .icon-nav a span {
+          display: none;
+        }
+
+        .search-box input {
+          width: 70px;
+        }
+
+        .footer {
+          padding: 1.5rem 1rem 1rem;
+        }
+
+        .footer-col h4 {
+          font-size: 1.1rem;
+        }
+
+        .footer-col a {
+          font-size: 0.85rem;
+        }
+
+        .copyright {
+          font-size: 0.8rem;
+        }
+      }
+
+      /* ========== SCROLL BEHAVIOR ========== */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* ========== UTILITY CLASSES ========== */
+      .container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* ========== ANIMATIONS ========== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ========== الهيدر الموحد ========== -->
+    <header class="header" id="header">
+      <div class="header-container">
+        
+        <div class="logo">
+  <img loading="lazy" src="../ass/رواق.jpeg" alt="logo">
+  <span>رِواق</span>
+</div>
+
+        <div class="nav-wrapper">
+          <div class="main-nav">
+            <a href="../index.html">الرئيسية</a>
+            <a href="../index.html#rings">الخواتم</a>
+            <div class="dropdown">
+              <a href="../pages/stones.html">الأحجار</a>
+              <ul class="dropdown-menu">
+                <li><a href="../pages/stones.html#agate">العقيق</a></li>
+                <li><a href="../pages/stones.html#garnet">الجارنيت</a></li>
+                <li>
+                  <a href="../pages/stones.html#tourmaline">التورمالين</a>
+                </li>
+                <li><a href="../pages/stones.html#ruby">الياقوت</a></li>
+              </ul>
+            </div>
+            <a href="../pages/aboutus.html">من نحن</a>
+            <a href="#contact">تواصل</a>
+          </div>
+          <div class="icon-nav">
+            <div class="search-box">
+              <input type="text" placeholder="بحث..." />
+              <button><i class="fas fa-search"></i></button>
+            </div>
+            <a href="#" class="cart" id="cartBtn">
+              <i class="fas fa-shopping-cart"></i>
+              <span>سلة</span>
+            </a>
+            <a href="../pages/login.html" class="user">
+              <i class="fas fa-user"></i>
+              <span>حساب</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!doctype html>
+    <html lang="ar" dir="rtl">
+      <head>
+        <meta charset="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>فروع رِواق | الفضة والأحجار الكريمة - صنعاء، إب، تعز</title>
+        <!-- Google Fonts + Font Awesome + External Style (safe fallback) -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@300;400;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <!-- main style reference (exists in project) -->
+        <link rel="stylesheet" href="../style.css" />
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family:
+              "Playpen Sans Arabic",
+              "Segoe UI",
+              system-ui,
+              -apple-system,
+              sans-serif;
+            background-color: #faf7f2;
+            color: #2c241a;
+          }
+
+          /* page header */
+          .page-header {
+            background: linear-gradient(135deg, #6b4f3a, #4f3a2b);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+          }
+
+          .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+          }
+
+          .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+          }
+
+          /* branches container */
+          .branches-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+          }
+
+          /* branch card */
+          .branch-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(107, 79, 58, 0.12);
+          }
+
+          .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
+          }
+
+          /* icon section */
+          .branch-icon {
+            flex: 1;
+            min-width: 120px;
+            background: linear-gradient(135deg, #f5ede2, #efe3d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+          }
+
+          .branch-icon i {
+            font-size: 3.5rem;
+            color: #6b4f3a;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          }
+
+          /* info section */
+          .branch-info {
+            flex: 3;
+            padding: 1.8rem;
+          }
+
+          .branch-info h3 {
+            color: #4a2c1a;
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            border-right: 4px solid #b48c63;
+            padding-right: 12px;
+          }
+
+          .branch-location {
+            color: #b48c63;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+          }
+
+          .branch-location i {
+            font-size: 1rem;
+            width: 24px;
+            color: #8b694c;
+          }
+
+          .branch-details p {
+            margin: 0.7rem 0;
+            color: #4f3e2e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+          }
+
+          .branch-details i {
+            width: 28px;
+            color: #b48c63;
+            font-size: 1.1rem;
+            text-align: center;
+          }
+
+          .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1rem;
+            color: #6b4f3a;
+            text-decoration: none;
+            font-weight: 600;
+            background: #f7efe7;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+          }
+
+          .map-link i {
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+          }
+
+          .map-link:hover {
+            background-color: #6b4f3a;
+            color: white;
+          }
+
+          .map-link:hover i {
+            transform: translateX(-3px);
+          }
+
+          /* decorative footer suggestion (subtle) */
+          .footer-note {
+            text-align: center;
+            padding: 2rem;
+            color: #9b7e66;
+            border-top: 1px solid #e9dfd3;
+            max-width: 1200px;
+            margin: 1rem auto 2rem auto;
+            font-size: 0.85rem;
+          }
+
+          /* responsive */
+          @media (max-width: 768px) {
+            .page-header h1 {
+              font-size: 1.8rem;
+            }
+            .branch-icon {
+              min-width: 80px;
+              padding: 1.5rem;
+            }
+            .branch-icon i {
+              font-size: 2.5rem;
+            }
+            .branch-info h3 {
+              font-size: 1.3rem;
+            }
+            .branches-container {
+              padding: 0 1.2rem;
+            }
+            .branch-card {
+              border-radius: 24px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .branch-details p {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 4px;
+            }
+            .branch-details i {
+              width: auto;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="page-header">
+          <h1>📍 فروع رِواق</h1>
+          <p>لمسة أصالة يمنية — تشكيلات حصرية من الفضة والأحجار الكريمة</p>
+        </div>
+
+        <div class="branches-container">
+          <!-- فرع صنعاء (اليمن) - العاصمة -->
+          <div class="branch-card">
+            <div class="branch-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <div class="branch-info">
+              <h3>فرع صنعاء</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> شارع تعز، حدة، مقابل حديقة
+                السبعين، صنعاء - اليمن
+              </div>
+              <div class="branch-details">
+                <p><i class="fas fa-phone-alt"></i> +967 77 123 4567</p>
+                <p>
+                  <i class="fas fa-clock"></i> السبت - الخميس: 9:00 ص - 10:30 م
+                </p>
+                <p><i class="fas fa-clock"></i> الجمعة: 2:00 م - 10:00 م</p>
+                <p>
+                  <i class="fas fa-gem"></i> خدمة التوصيل داخل العاصمة | تصميم
+                  مجوهرات حسب الطلب
+                </p>
+              </div>
+              <a href="#" class="map-link"
+                ><i class="fas fa-map"></i> عرض على الخريطة
+                <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- فرع إب - اليمن -->
+          <div class="branch-card">
+            <div class="branch-icon">
+              <i class="fas fa-tree"></i>
+            </div>
+            <div class="branch-info">
+              <h3>فرع إب</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> شارع الجيش، وسط المدينة،
+                بجوار سوق الذهب القديم، إب - اليمن
+              </div>
+              <div class="branch-details">
+                <p><i class="fas fa-phone-alt"></i> +967 77 234 5678</p>
+                <p>
+                  <i class="fas fa-clock"></i> السبت - الخميس: 9:30 ص - 9:30 م
+                </p>
+                <p><i class="fas fa-clock"></i> الجمعة: 1:30 م - 9:30 م</p>
+                <p>
+                  <i class="fas fa-ring"></i> تشكيلة خاصة من الأحجار الكريمة
+                  اليمنية (العقيق، الجزع)
+                </p>
+              </div>
+              <a href="#" class="map-link"
+                ><i class="fas fa-map"></i> عرض على الخريطة
+                <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- فرع تعز - اليمن -->
+          <div class="branch-card">
+            <div class="branch-icon">
+              <i class="fas fa-mountain-city"></i>
+            </div>
+            <div class="branch-info">
+              <h3>فرع تعز</h3>
+              <div class="branch-location">
+                <i class="fas fa-map-marker-alt"></i> شارع جمال، حي الروضة،
+                مقابل مجمع السعيد التجاري، تعز - اليمن
+              </div>
+              <div class="branch-details">
+                <p><i class="fas fa-phone-alt"></i> +967 77 345 6789</p>
+                <p>
+                  <i class="fas fa-clock"></i> السبت - الخميس: 10:00 ص - 10:00 م
+                </p>
+                <p><i class="fas fa-clock"></i> الجمعة: 3:00 م - 10:00 م</p>
+                <p>
+                  <i class="fas fa-certificate"></i> شهادات أصالة مرفقة | نقاء
+                  الفضة 925
+                </p>
+              </div>
+              <a href="#" class="map-link"
+                ><i class="fas fa-map"></i> عرض على الخريطة
+                <i class="fas fa-arrow-left"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- ملاحظة تراثية إضافية: فروع سابقة في الرياض وجدة والدمام تم دمجها مع الهوية اليمنية الجديدة،
+         ولكن تم إزالة الفروع القديمة حسب متطلبات المشروع: صنعاء، إب، تعز فقط -->
+        </div>
+
+        <div class="footer-note">
+          <i class="fas fa-hand-sparkles"></i> رِواق للفضة والأحجار الكريمة —
+          فروعنا في صنعاء، إب، تعز ننتظركم لتجربة فريدة
+        </div>
+
+        <!-- مرجع script.js موجود في المشروع، لا يتعارض مع الصفحة -->
+        <script src="../script.js"></script>
+        <!-- إضافة سكريبت خفيف لتحسين تجربة الخرائط (رسالة توضيحية عند النقر مؤقتاً) -->
+        <script>
+          (function () {
+            // تحسين تجربة المستخدم: عند النقر على "عرض على الخريطة" نعرض رسالة تفيد بفتح الخريطة قريباً،
+            // ويمكن ربطها بخرائط جوجل مستقبلاً. لكن نضيف سلوكاً ودوداً بدلاً من الرابط الفارغ.
+            const mapLinks = document.querySelectorAll(".map-link");
+            mapLinks.forEach((link) => {
+              link.addEventListener("click", function (e) {
+                e.preventDefault();
+                // تحديد اسم الفرع من الـ h3 القريب
+                const branchCard = this.closest(".branch-card");
+                let branchName = "";
+                if (branchCard) {
+                  const titleElem = branchCard.querySelector("h3");
+                  if (titleElem) branchName = titleElem.innerText.trim();
+                }
+                // رسالة توضيحية لطيفة لأن العرض على الخريطة قد يكون مستقبلياً أو مدمج مع API
+                alert(
+                  `📍 سيتم توجيهك إلى خرائط تفاعلية لـ "${branchName}" قريباً. يمكنك استخدام العنوان المذكور للوصول إلينا. شكراً لثقتكم برِواق.`,
+                );
+              });
+            });
+
+            // إضافة تأثير تحسيني لأيقونات الساعات أو تفاصيل إضافية
+            console.log("فروع رِواق (صنعاء، إب، تعز) تم تحميلها بنجاح");
+          })();
+        </script>
+      </body>
+    </html>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>رِواق</h4>
+          <a href=" blog.html"><i class="fas fa-chevron-left"></i> المدونة</a>
+          <a href=" addr.html"><i class="fas fa-chevron-left"></i> العناوين</a>
+          <a href=" jobs.html"><i class="fas fa-chevron-left"></i> وظائف</a>
+        </div>
+        <div class="footer-col">
+          <h4>مساعدة</h4>
+          <a href="faq.html"
+            ><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a
+          >
+          <a href="ship.html"
+            ><i class="fas fa-chevron-left"></i> الشحن والتوصيل</a
+          >
+          <a href="returns.html"
+            ><i class="fas fa-chevron-left"></i> الإرجاع والاستبدال</a
+          >
+          <a href="pay.html"><i class="fas fa-chevron-left"></i> طرق الدفع</a>
+        </div>
+        <div class="footer-col">
+          <h4>سياسات</h4>
+          <a href="privacy.html"
+            ><i class="fas fa-chevron-left"></i> الخصوصية</a
+          >
+          <a href="terms.html"
+            ><i class="fas fa-chevron-left"></i> شروط الاستخدام</a
+          >
+          <a href="cookies.html"
+            ><i class="fas fa-chevron-left"></i> ملفات تعريف الارتباط</a
+          >
+        </div>
+        <div class="footer-col">
+          <h4>تابعنا</h4>
+          <a href="https://www.instagram.com/mii7fi"
+            ><i class="fab fa-instagram"></i> إنستغرام</a
+          >
+          <a href="https://www.facebook.com/share/1AtRwuMcKK/"
+            ><i class="fab fa-facebook"></i> فيسبوك</a
+          >
+          <a href="https://wa.me/967772885397"
+            ><i class="fab fa-whatsapp"></i> واتساب</a
+          >
+          <a href="https://www.snapchat.com/add/lqdry23201"
+            ><i class="fab fa-snapchat"></i> سناب شات</a
+          >
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2025 رِواق للفضة والأحجار الكريمة. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <!-- ========== سلة التسوق الجانبية ========== -->
+    <div class="cart-overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>سلة التسوق</h2>
+        <span id="closeCart">&times;</span>
+      </div>
+      <div class="cart-content">
+        <p>السلة فارغة</p>
+      </div>
+    </div>
+
+    <!-- ========== ملف الجافاسكريبت الرئيسي ========== -->
+    <script src="../js/script.js"></script>
+    <!-- ========== سكربت إضافي للسلة والهيدر ========== -->
+    <script>
+      // سلة التسوق
+      const cartBtn = document.getElementById("cartBtn");
+      const cartSidebar = document.getElementById("cartSidebar");
+      const closeCart = document.getElementById("closeCart");
+      const overlay = document.getElementById("overlay");
+
+      if (cartBtn && cartSidebar && overlay) {
+        cartBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          cartSidebar.classList.add("active");
+          overlay.classList.add("active");
+        });
+      }
+
+      if (closeCart && cartSidebar && overlay) {
+        closeCart.addEventListener("click", function () {
+          cartSidebar.classList.remove("active");
+          overlay.classList.remove("active");
+        });
+      }
+
+      if (overlay && cartSidebar) {
+        overlay.addEventListener("click", function () {
+          cartSidebar.classList.remove("active");
+          overlay.classList.remove("active");
+        });
+      }
+
+      // تأثير الهيدر عند التمرير
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (header) {
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

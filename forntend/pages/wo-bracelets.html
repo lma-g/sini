@@ -1,0 +1,251 @@
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أساور نسائية | رِواق للفضة والأحجار الكريمة</title>
+  
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- ملف التنسيق الرئيسي -->
+  <link rel="stylesheet" href="../css/style.css">
+  
+  <style>
+    /* تنسيق إضافي للصفحة */
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #faf3e8 0%, #f0e8df 100%);
+      margin-bottom: 1rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: #4a2c1a;
+      font-weight: 700;
+    }
+    
+    .page-header p {
+      color: #6b4e2e;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== الهيدر الموحد ========== -->
+  <header class="header" id="header">
+    <div class="header-container">
+      
+      <div class="logo">
+        <img loading="lazy" src="../ass/رواق.jpeg" alt="logo">
+        <span>رِواق</span>
+      </div>
+
+      <div class="nav-wrapper">
+        <div class="main-nav">
+          <a href="../index.html">الرئيسية</a>
+          <a href="../index.html#rings">الخواتم</a>
+          <div class="dropdown">
+            <a href="stones.html">الأحجار</a>
+            <ul class="dropdown-menu">
+              <li><a href="stones.html#agate">العقيق</a></li>
+              <li><a href="stones.html#garnet">الجارنيت</a></li>
+              <li><a href="stones.html#tourmaline">التورمالين</a></li>
+              <li><a href="stones.html#ruby">الياقوت</a></li>
+            </ul>
+          </div>
+          <a href="aboutus.html">من نحن</a>
+          <a href="#contact">تواصل</a>
+        </div>
+        <div class="icon-nav">
+          <div class="search-box">
+            <input type="text" placeholder="بحث...">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <a href="#" class="cart" id="cartBtn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>سلة</span>
+          </a>
+          <a href="login.html" class="user" id="userBtn">
+            <i class="fas fa-user"></i>
+            <span>حساب</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== عنوان الصفحة ========== -->
+  <div class="page-header">
+    <h1>أساور نسائية</h1>
+    <p>تشكيلة فاخرة من الأساور النسائية المصنوعة من الفضة النقية والأحجار الكريمة</p>
+  </div>
+
+  <!-- ========== منتجات الصفحة ========== -->
+  <div class="additional-content">
+    <div class="products-container" id="rings">
+       
+      <!-- المنتج 1 -->
+      <div class="product" data-name="سوار الإرث العتيق بحجر اليشم الأبيض" data-price="45" 
+           data-desc="سوار مفتوح من الفضة المصقولة بتصميم كلاسيكي يجمع بين حجر اليشم الأبيض المستدير وزخارف فضية معقدة يتوسطها فص عقيقي صغير ليعطي لمسة من الفخامة التراثية" 
+           data-img="../ass/اساور/bra4.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra4.jpg" alt="سوار يشم أبيض"></div>
+        <h3>سوار الإرث العتيق بحجر اليشم الأبيض</h3>
+        <div class="price-info-row"><span class="price">45$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 2 -->
+      <div class="product" data-name="سوار الأكوامارين الفيكتوري المرصع" data-price="50" 
+           data-desc="سوار صلب بتصميم عتيق مزخرف بنقوش يدوية دقيقة، يتوسطه حجر أكوامارين بيضاوي بلمعة ناعمة، مضاف إليه دلاية رقيقة تضفي لمسة من الأنوثة الكلاسيكية" 
+           data-img="../ass/اساور/bra1.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra1.jpg" alt="سوار أكوامارين"></div>
+        <h3>سوار الأكوامارين الفيكتوري المرصع</h3>
+        <div class="price-info-row"><span class="price">50$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 3 -->
+      <div class="product" data-name="سوار جارنيت إمبيير المفتوح بنقوش ملكية" data-price="50" 
+           data-desc="سوار صلب عالي التفاصيل يتميز بنقوش كلاسيكية بارزة على الطراز العتيق، ينتهي برأسين مرصعين بحجري زركون أحمر بقطع كمثري فاخر ليعكس مظهراً ملكياً يجمع بين القوة والأناقة." 
+           data-img="../ass/اساور/bra6.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra6.jpg" alt="سوار جارنيت"></div>
+        <h3>سوار جارنيت إمبيير المفتوح بنقوش ملكية</h3>
+        <div class="price-info-row"><span class="price">50$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 4 -->
+      <div class="product" data-name="سوار السلسلة الكلاسيكي بحجر الزمرد الكريستالي" data-price="35" 
+           data-desc="سوار ناعم بتصميم حلقات متصلة (Chain Style) من المعدن المصقول، يتوسطه حجر زركون أخضر بقطع مستطيل فاخر يضفي لمسة من الرقي العصري على معصمك." 
+           data-img="../ass/اساور/bra2.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra2.jpg" alt="سوار زمرد"></div>
+        <h3>سوار السلسلة الكلاسيكي بحجر الزمرد الكريستالي</h3>
+        <div class="price-info-row"><span class="price">35$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 5 -->
+      <div class="product" data-name="سوار أرابيسك الفضي المرصع بالجارنيت" data-price="55" 
+           data-desc="سوار مشغول بدقة من الفضة المؤكسدة بتصميم يتألف من وحدات زخرفية هندسية بنقوش عربية عتيقة، تتخللها أحجار جارنيت حمراء بقطع مربع لإضفاء لمسة من الفخامة التاريخية." 
+           data-img="../ass/اساور/bra7.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra7.jpg" alt="سوار أرابيسك"></div>
+        <h3>سوار أرابيسك الفضي المرصع بالجارنيت</h3>
+        <div class="price-info-row"><span class="price">55$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 6 -->
+      <div class="product" data-name="سوار الإرث الشرقي من الفضة واليشم الأخضر" data-price="40" 
+           data-desc="سوار صلب مزخرف بنقوش زهرية دقيقة على الطراز العتيق، يحتضن حجراً مستديراً من اليشم الأخضر الطبيعي يتوسطه رمز 'فو' التقليدي لجلب الحظ والسكينة" 
+           data-img="../ass/اساور/bra3.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra3.jpg" alt="سوار يشم أخضر"></div>
+        <h3>سوار الإرث الشرقي من الفضة واليشم الأخضر</h3>
+        <div class="price-info-row"><span class="price">40$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 7 -->
+      <div class="product" data-name="سوار توليب الفضي بحجر الكوارتز الشفاف" data-price="60" 
+           data-desc="سوار مصنوع من الفضة المؤكسدة بتصميم مجدول يدويًا، يتألق بحجر كوارتز شفاف بقطع كوشين محاط بإطار فني معقد ووحدات زخرفية جانبية تضفي لمسة من الأناقة التاريخية." 
+           data-img="../ass/اساور/bra8.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra8.jpg" alt="سوار كوارتز"></div>
+        <h3>سوار توليب الفضي بحجر الكوارتز الشفاف</h3>
+        <div class="price-info-row"><span class="price">60$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+
+      <!-- المنتج 8 -->
+      <div class="product" data-name="سوار نجمة بالي المجدول بالفضة والذهب" data-price="65" 
+           data-desc="سوار يدوي الصنع يتميز بتصميم السلسلة المجدولة التقليدية، يتوسطه شريط فضي مزين بزهور فرانجيباني المطلية بذهب عيار 18 قيراط، مع قفل دائري كلاسيكي يجمع بين المتانة والأناقة الفنية" 
+           data-img="../ass/اساور/bra9.jpg">
+        <div class="product-img-wrapper"><img loading="lazy" src="../ass/اساور/bra9.jpg" alt="سوار بالي"></div>
+        <h3>سوار نجمة بالي المجدول بالفضة والذهب</h3>
+        <div class="price-info-row"><span class="price">65$</span><button class="info-btn">ⓘ</button></div>
+        <button class="add-cart">➕ أضف إلى السلة</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== الفوتر ========== -->
+  <footer class="footer" id="contact">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>رِواق</h4>
+        <a href="../pages_footer/blog.html"><i class="fas fa-chevron-left"></i> المدونة</a>
+        <a href="../pages_footer/addr.html"><i class="fas fa-chevron-left"></i> العناوين</a>
+        <a href="../pages_footer/jobs.html"><i class="fas fa-chevron-left"></i> وظائف</a>
+      </div>
+      <div class="footer-col">
+        <h4>مساعدة</h4>
+        <a href="../pages_footer/faq.html"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a>
+        <a href="../pages_footer/ship.html"><i class="fas fa-chevron-left"></i> الشحن والتوصيل</a>
+        <a href="../pages_footer/returns.html"><i class="fas fa-chevron-left"></i> الإرجاع والاستبدال</a>
+        <a href="../pages_footer/pay.html"><i class="fas fa-chevron-left"></i> طرق الدفع</a>
+      </div>
+      <div class="footer-col">
+        <h4>سياسات</h4>
+        <a href="../pages_footer/privacy.html"><i class="fas fa-chevron-left"></i> الخصوصية</a>
+        <a href="../pages_footer/terms.html"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a>
+        <a href="../pages_footer/cookies.html"><i class="fas fa-chevron-left"></i> ملفات تعريف الارتباط</a>
+      </div>
+      <div class="footer-col">
+        <h4>تابعنا</h4>
+        <a href="https://www.instagram.com/mii7fi"><i class="fab fa-instagram"></i> إنستغرام</a>
+        <a href="https://www.facebook.com/share/1AtRwuMcKK/"><i class="fab fa-facebook"></i> فيسبوك</a>
+        <a href="https://wa.me/967772885397"><i class="fab fa-whatsapp"></i> واتساب</a>
+        <a href="https://www.snapchat.com/add/lqdry23201"><i class="fab fa-snapchat"></i> سناب شات</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 رِواق للفضة والأحجار الكريمة. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- ========== سلة التسوق الجانبية ========== -->
+  <div class="cart-overlay" id="overlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>سلة التسوق</h2>
+      <span id="closeCart">&times;</span>
+    </div>
+    <div class="cart-content">
+      <p>السلة فارغة</p>
+    </div>
+  </div>
+
+  <!-- ========== نافذة معلومات المنتج ========== -->
+  <div id="infoModal" class="modal-overlay">
+    <div class="modal-card">
+      <img loading="lazy" id="modalImg" class="modal-img" src="" alt="صورة المنتج">
+      <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+        <div id="modalDesc" class="modal-description"></div>
+        <div id="modalPrice" class="modal-price"></div>
+        <button class="close-modal-btn" id="closeModalBtn">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ملف الجافاسكريبت الرئيسي ========== -->
+  <script src="../js/script.js"></script>
+  
+  <!-- ========== سكربت إضافي لهذه الصفحة ========== -->
+  <script>
+    // التحقق من وجود جلسة نشطة عند تحميل الصفحة
+    window.addEventListener('load', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn === 'true') {
+        const userSpan = document.querySelector('.user span');
+        if (userSpan) {
+          userSpan.textContent = 'مرحباً!';
+        }
+      }
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /rawaq/
+
+# Enable Clean URLs for categories
+RewriteRule ^category/([^/]+)/?$ pages/products_view.php?category=$1 [L,QSA]
+
+# Enable Clean URLs for search
+RewriteRule ^search/(.*)/?$ pages/products_view.php?search=$1 [L,QSA]
+
+# Optional: Disable directory browsing
+Options -Indexes
