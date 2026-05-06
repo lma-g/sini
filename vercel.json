@@ -1,7 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "ignoreCommand": "exit 0",
   "headers": [
     {
       "source": "/(.*)",
